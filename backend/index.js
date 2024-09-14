@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables from .env
+require('dotenv').config(); 
 
 const express = require('express');
 const axios = require('axios');
@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.get('/news', async (req, res) => {
-  const category = req.query.category || 'general'; // Default category
+  const category = req.query.category || 'general'; 
 
   console.log('Fetching news for category:', category);
   console.log('Using API Key:', process.env.API_KEY);
@@ -19,7 +19,7 @@ app.get('/news', async (req, res) => {
         apikey: process.env.API_KEY
       }
     });
-    console.log('API Response:', response.data); // Log the response data
+    console.log('API Response:', response.data);
     res.json(response.data);
   } catch (error) {
     console.error('Error fetching news:', error.message);
